@@ -14,7 +14,7 @@ wp core download --allow-root
 
 sleep 5
 
-mv wp-config-sample.php  wp-config.php
+# mv wp-config-sample.php  wp-config.php
 
 sed -i -r "s/database_name_here/$SQL_DATABASE/1"   wp-config.php
 sed -i -r "s/username_here/$SQL_USER/1"  wp-config.php
