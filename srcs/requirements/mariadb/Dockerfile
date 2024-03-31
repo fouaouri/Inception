@@ -1,4 +1,4 @@
-FROM debian:12
+FROM debian:11
 RUN  apt update -y && apt upgrade -y
 RUN  apt install mariadb-server -y
 COPY to_run_db.sh /to_run_db.sh

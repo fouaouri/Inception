@@ -1,8 +1,9 @@
-version : '3'
+version : '3.8'
 services:
   nginx:
-    build: nginx
+    build: requirements/nginx
     container_name: nginx
+    image: nginx
     volumes:
       - wordpress:/var/www/wordpress
     networks:
@@ -15,20 +16,20 @@ services:
     restart: on-failure
             
   mariadb:
-    build: mariadb
+    build: requirements/mariadb
     container_name: mariadb
+    image: mariadb
     networks:
       - inception
     env_file: .env
     volumes:
       - mariadb:/var/lib/mysql
     restart: unless-stopped
-    expose:
-      - "3306"
 
   wordpress:
-    build: wordpress
+    build: requirements/wordpress
     container_name: wordpress
+    image: wordpress
     env_file: .env
     volumes:
       - wordpress:/var/www/wordpress
@@ -37,8 +38,6 @@ services:
     depends_on:
       - mariadb
     restart: on-failure
-    expose: 
-      - "9000"
 
 
 volumes:

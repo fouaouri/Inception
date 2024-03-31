@@ -2,7 +2,7 @@ server {
     listen 443 ssl;
     server_name localhost;
     ssl_protocols TLSv1.2;
-    ssl_certificate /etc/nginx/titim.crt;
+    ssl_certificate $CERTS_;
     ssl_certificate_key /etc/nginx/titim.key;
     
     root /var/www/wordpress;
