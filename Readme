@@ -1,0 +1,1 @@
+#envsubst <default.temp> /etc/nginx/site/de
