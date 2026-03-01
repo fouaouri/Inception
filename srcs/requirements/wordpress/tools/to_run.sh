@@ -1,5 +1,6 @@
 service php7.4-fpm start
 sleep 2
+
 mkdir /var/www
 sed -i -r "s/\/run\/php\/php7.4-fpm.sock/9000/1"   /etc/php/7.4/fpm/pool.d/www.conf
 
@@ -15,7 +16,8 @@ wp core download --allow-root
 
 sleep 5
 
-mv wp-config-sample.php  wp-config.php
+mv -f wp-config-sample.php  wp-config.php
+
 
 sed -i -r "s/database_name_here/$SQL_DATABASE/1"   wp-config.php
 sed -i -r "s/username_here/$SQL_USER/1"  wp-config.php

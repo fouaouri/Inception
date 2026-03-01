@@ -1,4 +1,5 @@
 COMPOSE_FILE = srcs/docker-compose.yml
+
 add : up
 
 up :
@@ -9,5 +10,7 @@ down :
 
 rmi : 
 	docker rmi -f $$(docker images -q)
+
+rm : down rmi
 
 re : down rmi up

@@ -13,5 +13,5 @@ mariadb -e "GRANT ALL PRIVILEGES ON \`${SQLDB}\`.* TO '${SQLUSER}'@'%';"
 mariadb -e "FLUSH PRIVILEGES;"
 
 service mariadb stop
-sleep 1
+sleep 2
 mysqld_safe --bind-address=mariadb --port=3306 2>/dev/null
